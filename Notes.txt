@@ -1,0 +1,14 @@
+How it works in Java?
+Source code converted to bytecode (sequences of 0's and 1's) by compiler, and then Java virtual machine (JVM) reads the bytecode
+
+Name of Interface must be an adjective: like Runable,Readable,Remote etc
+
+Class name must be noun like Student, Person,Computer,Hashmap etc
+
+Method name mut be verb like actionPerfomrmed,run,print,write
+
+By default 0 is taken as the  value for int etc ratherthan garbage values
+
+Main method is static because in java, to call a mathod we need an object, but we don't have an object at the start of our program so we create a static method and static methods don't require an object to be called
+
+We cannot use a non-static variable in a static block
