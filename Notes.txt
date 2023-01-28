@@ -78,5 +78,16 @@ If I declare a method as final,  then this method can't be overriden by any chil
 ===Interface and abstract class===
 Interface is same as abstract class, but in abstract class we can have both asbtract methods as well as non-abstract methods, but in case of interface we cannot have non-abstract methods
 
-For interface we use the keyword "implements" and for abstract class, we use the keyword "extends" 
+For interface we use the keyword "implements" and for abstract class, we use the keyword "extends", the benefit of using interface is that in Java we can't have multiple polymorphism so we can't extend from two classes A,B but we can implement an interface and extend a class, something like class B implements A extends Character
 
+Also, in interface we cannot define any method, like public void func(){ ....code .... } will give error, in an interface we can only declare the function, but in case of abstract class we can define the method too like public void speak(){ "Hello this is a general animal speaking" }
+
+Another use case of interfaces in Java: let's say a manager wants to explain what all functionalities he wants in the project, he can give an interface with all the function declarations, so that the other person can come to know what he needs to implement.
+
+Concept of Anonymous inner class: if I want to override a function show() of A, one way is to create a class B extends A and then define the show function inside it, another way is to define an anonymous inner class, something like
+
+obj A=new A(){
+    public void show() {...code...}
+}
+
+Just like abstract class, we can only create reference of abstract class, we cannot create object of interface.
