@@ -91,3 +91,15 @@ obj A=new A(){
 }
 
 Just like abstract class, we can only create reference of abstract class, we cannot create object of interface.
+
+There are three types of interfaces in Java: 1) Marker interfaces: where the interface has got 0 methods (like serializable interface in Java) (why is such an interface having 0 methods required? ) (will be discussed later)
+
+2) Functional interface or Single Abstract Method interface (SAM interface)-> these are the interfaces having one function (method ) only
+
+Due to the concept of functional interfaces, we can have lambda expressions in Java
+
+3) Normal interface: interface where there are >=2 methods
+
+Annotations are used to provide supplemental information about a program. 
+
+Annotations start with ‘@’.
