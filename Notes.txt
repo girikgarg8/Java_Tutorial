@@ -48,6 +48,9 @@ Autoboxing is the process by which a primitive type is automatically encapsulate
 
 Some frameworks in Java work only with wrapper classes and not with primitive data types like int
 
+
+Abstract class: is a restricted class that cannot be used to create objects (to access it, it must be inherited from another class). Abstract method: can only be used in an abstract class, and it does not have a body. The body is provided by the subclass (inherited from).
+
 In order for a function to be abstract, the corresponding class must also be abstract 
 
 abstract class Human{
@@ -61,3 +64,19 @@ class Man extends Human{ //this class is known as concrete class
 
     }
 }
+
+Example of asbtract Keyword used in Java...class Integer and Float implement the abstract class Number
+
+Final Keyword in Java: Final keyword can be used with methods, classes and variables
+
+Final variable is constant in nature, it's value can't be changed 
+
+There can be use cases where we want to create a final class, a final class cannot be inherited by any other child class
+
+If I declare a method as final,  then this method can't be overriden by any child class. 
+
+===Interface and abstract class===
+Interface is same as abstract class, but in abstract class we can have both asbtract methods as well as non-abstract methods, but in case of interface we cannot have non-abstract methods
+
+For interface we use the keyword "implements" and for abstract class, we use the keyword "extends" 
+
