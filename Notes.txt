@@ -12,3 +12,52 @@ By default 0 is taken as the  value for int etc ratherthan garbage values
 Main method is static because in java, to call a mathod we need an object, but we don't have an object at the start of our program so we create a static method and static methods don't require an object to be called
 
 We cannot use a non-static variable in a static block
+
+Java doesn't support multiple inhertitance (due to ambiguity problem) , but C++ supports Multiple InheritanceDemo
+
+Dynamic method dispactch in Java is a facny name for runtime polymorphism, if I use reference (LHS) of parent class but object of child class (on RHS), it is called runtime polymorphism. A obj=new B(); 
+
+Wrapper classes provide a way to use primitive data types (int, boolean, etc..) as objects.
+
+The table below shows the primitive type and the equivalent wrapper class:
+
+Primitive Data Type	Wrapper Class
+byte	Byte
+short	Short
+int	Integer
+long	Long
+float	Float
+double	Double
+boolean	Boolean
+char	Character
+
+Java automatically does a conversion of primitive data types into their wrapper classes when assigned. It is called boxing.
+
+public class MyFirstJavaProgram {
+   public static void main(String []args) {
+      Integer testData = 10; //boxing
+      System.out.println(testData);
+   }
+} (concept of boxing is there in JS also)
+
+
+Unboxing on the other hand refers to converting an object of a wrapper type to its corresponding primitive value. For example conversion of Integer to int
+
+
+Autoboxing is the process by which a primitive type is automatically encapsulated (boxed) into its equivalent type wrappers whenever an object of the type is needed. There is no need to construct an object explicitly. Like Integer value=5 will internally create the object using Integer value=new Integer(5) 
+
+Some frameworks in Java work only with wrapper classes and not with primitive data types like int
+
+In order for a function to be abstract, the corresponding class must also be abstract 
+
+abstract class Human{
+    public abstract void eat();
+    public void walk(){
+
+    }
+}
+class Man extends Human{ //this class is known as concrete class
+    public void eat(){
+
+    }
+}
