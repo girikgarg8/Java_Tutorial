@@ -130,3 +130,5 @@ Protected members can be accessed within the same package and within subclasses 
 Any illegal operation like 1/0 will throw an object of Exception
 
 There is a third block also,finally, which is executed, rregardless of whether an exception is encountered or not
+
+Checked and unchecked exceptions in Java
