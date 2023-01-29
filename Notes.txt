@@ -112,3 +112,13 @@ From java 1.8 onwards, I have a provision of using non abstract methods in Java 
 2) using super, specify which interface's function should be called
 
 If I create a variable inside an interface, it is by default final in nature, so we can't change the value of a variable inside any class which implements that interface 
+
+What is a java package? A collection of all related files, like for example for I/O, all the relaated classes will be combined in the java.io package. Package name must be such that it must be unique, and no-one else has the same package name. Like if domain name is google.com, then it makes sense to use the package name as com.google
+
+If I want to use all the classes present in com.Telusko, I will use com.Telusko.*
+
+Access modifiers: final,asbtract, protected, public and private are called access modifiers in Java (it's different from CPP, in CPP we only have protected, public and private as access modifiers)
+
+Out of these 5, we can't use protected and private with class 
+
+The accessibility od 
