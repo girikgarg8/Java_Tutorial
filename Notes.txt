@@ -103,3 +103,12 @@ Due to the concept of functional interfaces, we can have lambda expressions in J
 Annotations are used to provide supplemental information about a program. 
 
 Annotations start with ‘@’.
+
+From java 1.8 onwards, I have a provision of using non abstract methods in Java (means I can provide the function defintion too), with the help of default method in interfaces using the keyword 'default' 
+
+===A class can extend only one class (>=2 classes are not allowed), but a class Example can implement >=two interfaces, but there's a catch : if there are two conflicting defintions for a function show(), it will complaint, so there could be 2 possible solutions:
+
+1) Redefine the function in the class
+2) using super, specify which interface's function should be called
+
+If I create a variable inside an interface, it is by default final in nature, so we can't change the value of a variable inside any class which implements that interface 
