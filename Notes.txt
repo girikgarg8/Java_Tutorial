@@ -125,4 +125,8 @@ The accessibility of :
 private is within the same class
 default is within the specified package only (like com.girik only)
 public is within any class or package (like package com.nikhil will also be able to access com.girik's class)
-protected is withing subsiding class (child classes only)
+Protected members can be accessed within the same package and within subclasses in different packages.
+
+Any illegal operation like 1/0 will throw an object of Exception
+
+There is a third block also,finally, which is executed, rregardless of whether an exception is encountered or not
