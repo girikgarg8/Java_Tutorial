@@ -121,4 +121,8 @@ Access modifiers: final,asbtract, protected, public and private are called acces
 
 Out of these 5, we can't use protected and private with class 
 
-The accessibility od 
+The accessibility of :
+private is within the same class
+default is within the specified package only (like com.girik only)
+public is within any class or package (like package com.nikhil will also be able to access com.girik's class)
+protected is withing subsiding class (child classes only)
