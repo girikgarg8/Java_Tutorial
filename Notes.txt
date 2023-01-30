@@ -132,3 +132,30 @@ Any illegal operation like 1/0 will throw an object of Exception
 There is a third block also,finally, which is executed, rregardless of whether an exception is encountered or not
 
 Checked and unchecked exceptions in Java
+
+"throws" is a keyword in Java used in method declarations to indicate that the method can throw one or more exceptions. It indicates that the method does not handle the exception and that it should be propagated to the caller of the method.
+
+Try-catch block: A try-catch block is used to handle exceptions in a specific block of code. If an exception is thrown within the try block, the catch block is executed, providing an opportunity to handle the exception.
+
+Checked exceptions are exceptions that are checked at compile time, meaning that the code that might throw these exceptions must either handle or declare it.
+
+Unchecked exceptions are exceptions that are not checked at compile time and include runtime exceptions and errors.
+
+Java BufferedReader is a public Java class that reads text, using buffering to enable large reads at a time for efficiency, storing what is not needed immediately in memory for later use. Buffered readers are preferable for more demanding tasks, such as file and streamed readers.
+
+java.io.InputStreamReader is a class in the Java Standard Library (java.io package) that reads characters from an InputStream and decodes them into characters using a specified charset. The InputStreamReader class acts as a bridge between the byte-based input stream and the character-based world of Java.
+
+It provides a way to read data from an InputStream as characters, as opposed to bytes. The InputStreamReader class is often used to read data from a file or network socket.
+
+The InputStreamReader class provides several constructors that allow you to specify the input stream to be read and the charset to be used for decoding. It also provides several methods for reading characters, such as read(), read(char[] cbuf), and readLine().
+
+An exception may be thrown in a BufferedReader in the following scenarios:
+
+FileNotFoundException: This exception is thrown when the specified file is not found. It can occur when the BufferedReader is constructed using the FileReader class, and the file specified in the constructor does not exist.
+
+IOException: This exception is thrown when there is an error while reading from the BufferedReader. This can occur when the readLine() method encounters an end-of-file (EOF) marker or when the underlying input stream throws an IOException.
+
+UnsupportedEncodingException: This exception is thrown when the specified charset is not supported. It can occur when the BufferedReader is constructed using the InputStreamReader class, and the charset specified in the constructor is not supported by the system.
+
+It is important to handle these exceptions properly in your code to ensure that the program continues to run smoothly in the event of an error. This can be done using a try-catch block.
+
