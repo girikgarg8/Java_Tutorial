@@ -96,7 +96,9 @@ There are three types of interfaces in Java: 1) Marker interfaces: where the int
 
 2) Functional interface or Single Abstract Method interface (SAM interface)-> these are the interfaces having one function (method ) only
 
-Due to the concept of functional interfaces, we can have lambda expressions in Java
+ (Very very important) Due to the concept of functional interfaces, we can have lambda expressions in Java
+
+ Yes, in Java, a lambda expression can only be used with a functional interface, which is an interface with exactly one abstract method. The type of the lambda expression is determined by the functional interface it is assigned to. The body of the lambda expression implements the abstract method of the functional interface.
 
 3) Normal interface: interface where there are >=2 methods
 
@@ -298,4 +300,8 @@ Process vs Thread:
 The primary difference is that threads within the same process run in a shared memory space, while processes run in separate memory spaces. Threads are not independent of one another like processes are, and as a result threads share with other threads their code section, data section, and OS resources (like open files and signals). But, like process, a thread has its own program counter (PC), register set, and stack space. 
 
 Multithreading in java can be achieved by either extending the Thread class or by implementing the Runnable interface (the interface is provided because in Java, we can't have multiple inheritance so providing an interface is a good idea)
+
+The join method in the context of Java threads is used to wait for a thread to complete execution. When a join method is called on a thread, the calling thread will block and wait until the thread on which join was called has finished executing. This can be useful for ensuring that a particular thread has completed its work before proceeding with the rest of the program. The join method can be called on any Thread object and is often used with threads created using the Thread class or with threads created using the Executor framework.
+
+In Java, the isAlive method is a method of the Thread class that returns a boolean indicating whether the thread is still executing or not. The method returns true if the thread has been started and has not yet died, and returns false if the thread has completed execution or has not yet been started.
 
