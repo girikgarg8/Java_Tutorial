@@ -159,3 +159,10 @@ UnsupportedEncodingException: This exception is thrown when the specified charse
 
 It is important to handle these exceptions properly in your code to ensure that the program continues to run smoothly in the event of an error. This can be done using a try-catch block.
 
+In the syntax:  br = new BufferedReader(new InputStreamReader(System.in));
+
+InputStreamReader is a bridge from byte streams to character streams. It reads bytes from an InputStream and decodes them into characters using a specified charset.
+
+BufferedReader is a buffered character-based input stream. It wraps an existing Reader and buffers the input. This provides an efficient way to read characters, arrays, and lines.
+
+No, you don't always need to write a catch block with a try block. However, it is recommended to use a catch block to handle exceptions thrown by the code in the try block, so that your program can continue to run even if an error occurs. If I am not using a catch block with a try block, then it is compulsory to use finally block
