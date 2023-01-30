@@ -1,3 +1,4 @@
+package com.girik;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 

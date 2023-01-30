@@ -1,11 +1,11 @@
 package com.girik;
-//@FunctionalInterface
+@FunctionalInterface
 interface Abc{
     void show();
 
 }
 
-public class FunctionalInterface {
+public class FunctionalInterfaceDemo {
     public static void main(String[] args) {
         // Abc obj=new Abc() {
         //     public void show(){

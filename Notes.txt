@@ -117,7 +117,7 @@ What is a java package? A collection of all related files, like for example for 
 
 If I want to use all the classes present in com.Telusko, I will use com.Telusko.*
 
-Access modifiers: final,asbtract, protected, public and private are called access modifiers in Java (it's different from CPP, in CPP we only have protected, public and private as access modifiers)
+Access modifiers: final,abstract, protected, public and private are called access modifiers in Java (it's different from CPP, in CPP we only have protected, public and private as access modifiers)
 
 Out of these 5, we can't use protected and private with class 
 
@@ -170,3 +170,132 @@ No, you don't always need to write a catch block with a try block. However, it i
 try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) what does this syntax mean?
 
 This is an example of a try-with-resources statement in Java. It allows you to declare and automatically close resources that are used in a try block, in this case a BufferedReader. The resource (br) is declared in the parenthesis following the try keyword and is automatically closed at the end of the try block, even if an exception is thrown. This ensures that the resource is properly closed and helps to avoid resource leaks. The try-with-resources statement was introduced in Java 7 to make it easier to manage resources in a more efficient and exception-safe way.
+
+package com.girik;
+import java.util.Scanner;
+public class UserInput {
+    public static void main(String[] args) {
+        System.out.println(" Enter a number ");
+        Scanner scn = new Scanner(System.in); // system.in is preffered over inputstreamreader anf buffered reader
+                                              // because of the easier syntax of Scanner, here system.in specifies that
+                                              // we'll be taking input from the input stream (keyboard) instead of a
+                                              // file
+        int n = scn.nextInt(); // using nextInt has the davnatge that it automatically converts the character
+                               // stream to number, and handles the excpetion too
+        System.out.println(n);
+    }
+}
+
+Responsiveness: If the process is divided into multiple threads, if one thread completes its execution, then its output can be immediately returned.
+Faster context switch: Context switch time between threads is lower compared to process context switch. Process context switching requires more overhead from the CPU. 
+
+Effective utilization of multiprocessor system: If we have multiple threads in a single process, then we can schedule multiple threads on multiple processor. This will make process execution faster.
+
+Resource sharing: Resources like code, data, and files can be shared among all threads within a process. Note: stack and registers can’t be shared among the threads. Each thread has its own stack and registers.
+
+Communication: Communication between multiple threads is easier, as the threads shares common address space. while in process we have to follow some specific communication technique for communication between two process. 
+
+Enhanced throughput of the system: If a process is divided into multiple threads, and each thread function is considered as one job, then the number of jobs completed per unit of time is increased, thus increasing the throughput of the system. 
+
+The core of a processor refers to a single processing unit within a computer's central processing unit (CPU) that can interpret and execute instructions. It includes all the functional units, such as arithmetic logic unit (ALU) and control unit, needed to process data. A CPU can have multiple cores, allowing for parallel processing and improved performance.
+
+
+===Multithreading in Java===
+By default, the main thread in java excuetes on a single core only. 
+
+Some chat with ChatGPT
+
+
+Q. what is   a servlet in java
+A servlet is a Java class that runs on a Java-enabled web server and acts as a middleware between a web client (typically a browser) and a server-side application.
+Servlets handle client requests, process the request data, and generate a dynamic response based on the request. They are commonly used for creating dynamic web pages, handling form submissions, and managing user sessions.
+A servlet must implement the javax.servlet.Servlet interface, which defines the methods for initializing, processing requests, and generating responses. The servlet is then deployed to a web server, which takes care of handling incoming requests and forwarding them to the servlet for processing.
+In summary, servlets provide a convenient way to build dynamic, interactive web applications in Java. They are widely used and offer a number of benefits, including ease of development, scalability, and compatibility with a variety of web servers and clients.
+
+
+Q. Give me a practical example to explain how java servlet works
+Consider a web application that allows users to search for books by author or title. When a user submits a search request from a web browser, the request is sent to a web server. The web server then forwards the request to a Java servlet that is responsible for processing the request.
+Here's how the servlet would process the request:
+The servlet receives the request from the web server.
+The servlet extracts the search criteria (author or title) from the request data.
+The servlet performs a database query to retrieve the matching books.
+The servlet generates an HTML page that displays the search results.
+The servlet sends the response (the HTML page) back to the web server.
+The web server forwards the response to the client's browser, which displays the search results to the user.
+In this example, the servlet acts as a bridge between the web client and the server-side application, handling the request and generating a dynamic response based on the user's input. This approach allows for a clean separation between the presentation and the business logic, making it easier to maintain and scale the application.
+Q. 
+
+What is MVC
+MVC stands for Model-View-Controller, and it is a design pattern used in software engineering to separate an application into three interconnected components:
+Model: The model represents the underlying data and the business logic of the application. It manages the application's data and provides an interface for the view and controller to access the data.
+View: The view is responsible for displaying the data to the user. It generates the HTML, CSS, and JavaScript code needed to render the user interface.
+Controller: The controller acts as the intermediary between the model and the view. It receives user input from the view and updates the model accordingly. It also retrieves data from the model and passes it to the view for rendering.
+The MVC design pattern allows for a clear separation of concerns between the different components of the application, making it easier to develop, test, and maintain the code. It also promotes the development of reusable and modular components that can be used in other applications.
+In summary, MVC is a design pattern that helps to structure web applications and improve code maintainability and reuse by separating the application into three distinct components: the model, the view, and the controller.
+
+Q. 
+Give me a practical example to understand how MVC works
+Consider a simple to-do list application. The user can add, edit, and delete tasks, and the application displays a list of all the tasks. Here's how the MVC design pattern could be applied:
+Model: The model represents the task data and the business logic for adding, editing, and deleting tasks. It might include a class called Task and another class called TaskList that manages a collection of tasks.
+View: The view is responsible for rendering the task list to the user. It might include an HTML template and a JavaScript file that generates the HTML code and updates the user interface.
+Controller: The controller acts as the intermediary between the model and the view. It might include a servlet or a controller class that handles HTTP requests from the user, updates the model accordingly, and passes the updated task list to the view for rendering.
+Here's how a user interaction might be processed using MVC:
+The user submits a request to add a new task.
+The controller receives the request and updates the task list in the model by adding the new task.
+The controller retrieves the updated task list from the model and passes it to the view.
+The view generates the HTML code for the updated task list and sends the response back to the user's browser.
+The user's browser displays the updated task list.
+In this example, the MVC design pattern allows for a clean separation of concerns between the different components of the application. The model handles the task data and the business logic, the view handles the presentation, and the controller handles the interaction between the model and the view. This makes it easier to develop, test, and maintain the code, as well as to add new features or make changes to the application.
+
+
+Q. Can I say that java servlet follows MVC pattern
+Yes, Java Servlets can follow the Model-View-Controller (MVC) design pattern. The servlet component can be seen as the controller in the MVC architecture, handling user requests and updating the model data, while the model data and business logic are typically implemented as separate Java classes or components. The view component is usually handled by a template engine or a front-end framework such as JSP, JSF, or AngularJS.
+In a Java Servlet-based application, the servlet receives user requests, retrieves data from the model, and generates dynamic content based on the data. The generated content is then sent back to the client as a response.
+By using the MVC design pattern, developers can achieve a clear separation of concerns between the different components of the application, making it easier to develop, test, and maintain the code. It also allows for greater flexibility and modularity, as different components can be changed or updated without affecting the others.
+
+
+Q. what is a middleware
+Middleware is software that acts as a bridge between two or more software applications or components to facilitate communication and data exchange. Middleware acts as an intermediary between applications, allowing them to communicate and exchange data in a uniform and consistent way, regardless of their underlying platform, programming language, or architecture.
+Middleware provides services such as data mapping, data conversion, data validation, data transfer, security, and authentication. By using middleware, developers can reduce the complexity of integrating disparate applications, and ensure that the data exchange between applications is reliable and secure.
+There are several types of middleware, including:
+Message-oriented middleware: Facilitates communication between applications by passing messages between them.
+Remote Procedure Call (RPC) middleware: Allows applications to invoke remote functions or procedures as if they were local.
+Object Request Broker (ORB) middleware: Supports object-oriented programming and enables communication between objects running in different environments.
+Application server middleware: Supports the development and deployment of web applications and provides services such as security, session management, and database connectivity.
+In summary, middleware is a layer of software that provides communication and data exchange services between applications, reducing the complexity of integrating disparate systems and ensuring the reliability and security of data exchange.
+
+
+Q. what is difference between middle ware and API
+API (Application Programming Interface) and middleware are both technologies used for software integration, but they serve different purposes and have different characteristics.
+An API is a set of programming interfaces and protocols that allow applications to communicate with each other and exchange data. APIs typically specify the way in which applications can request and receive data or services from each other. For example, a weather API might allow a mobile application to retrieve current weather data from a weather service.
+Middleware, on the other hand, is a layer of software that acts as a bridge between applications to facilitate communication and data exchange. Middleware provides services such as data mapping, data conversion, data validation, data transfer, security, and authentication, and enables applications to communicate with each other regardless of their underlying platform, programming language, or architecture.
+In summary, APIs provide a way for applications to request and receive data or services from each other, while middleware provides the infrastructure and services needed to facilitate communication and data exchange between applications. While APIs can be seen as the interface between applications, middleware can be seen as the underlying plumbing that enables communication and data exchange to occur.
+
+
+Q. is controller in mvc and middleware same
+No, the controller in the Model-View-Controller (MVC) pattern and middleware are not the same thing, although they can have some similarities.
+The controller in the MVC pattern is responsible for handling user requests, updating the model data, and generating the appropriate response. It acts as the central component in the MVC architecture, coordinating the interactions between the model and the view.
+Middleware, on the other hand, is a layer of software that acts as a bridge between two or more software applications or components to facilitate communication and data exchange. Middleware provides services such as data mapping, data conversion, data validation, data transfer, security, and authentication.
+In some cases, a controller in an MVC-based application could be implemented as middleware, especially in a microservices architecture where each service is responsible for handling a specific aspect of the application. In such cases, the controller would act as middleware by providing a way for the different services to communicate and exchange data with each other.
+In summary, the controller in the MVC pattern and middleware are not the same thing, but they can be related and used together in certain software architectures.
+
+
+
+
+
+
+
+What is a Thread? 
+
+Within a program, a thread is a separate execution path. It is a lightweight process that the operating system can schedule and run concurrently with other threads. The operating system creates and manages threads, and they share the same memory and resources as the program that created them. This enables multiple threads to collaborate and work efficiently within a single program.
+
+Why Multithreading? 
+
+A thread is also known as lightweight process. The idea is to achieve parallelism by dividing a process into multiple threads. For example, in a browser, multiple tabs can be different threads. MS Word uses multiple threads: one thread to format the text, another thread to process inputs, etc. More advantages of multithreading are discussed below.
+
+Process vs Thread:
+
+The primary difference is that threads within the same process run in a shared memory space, while processes run in separate memory spaces. Threads are not independent of one another like processes are, and as a result threads share with other threads their code section, data section, and OS resources (like open files and signals). But, like process, a thread has its own program counter (PC), register set, and stack space. 
+
+Multithreading in java can be achieved by either extending the Thread class or by implementing the Runnable interface (the interface is provided because in Java, we can't have multiple inheritance so providing an interface is a good idea)
+
