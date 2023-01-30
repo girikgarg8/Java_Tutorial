@@ -166,3 +166,7 @@ InputStreamReader is a bridge from byte streams to character streams. It reads b
 BufferedReader is a buffered character-based input stream. It wraps an existing Reader and buffers the input. This provides an efficient way to read characters, arrays, and lines.
 
 No, you don't always need to write a catch block with a try block. However, it is recommended to use a catch block to handle exceptions thrown by the code in the try block, so that your program can continue to run even if an error occurs. If I am not using a catch block with a try block, then it is compulsory to use finally block
+
+try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) what does this syntax mean?
+
+This is an example of a try-with-resources statement in Java. It allows you to declare and automatically close resources that are used in a try block, in this case a BufferedReader. The resource (br) is declared in the parenthesis following the try keyword and is automatically closed at the end of the try block, even if an exception is thrown. This ensures that the resource is properly closed and helps to avoid resource leaks. The try-with-resources statement was introduced in Java 7 to make it easier to manage resources in a more efficient and exception-safe way.
