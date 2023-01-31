@@ -305,3 +305,5 @@ The join method in the context of Java threads is used to wait for a thread to c
 
 In Java, the isAlive method is a method of the Thread class that returns a boolean indicating whether the thread is still executing or not. The method returns true if the thread has been started and has not yet died, and returns false if the thread has completed execution or has not yet been started.
 
+collection,Collection and Collections (collection is a concept, Collection is an interface and Collections is a class)
+
