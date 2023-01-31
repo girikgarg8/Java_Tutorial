@@ -307,3 +307,20 @@ In Java, the isAlive method is a method of the Thread class that returns a boole
 
 collection,Collection and Collections (collection is a concept, Collection is an interface and Collections is a class)
 
+ArrayList Collection implements List Interface, and the List Interface implements Collection interface
+
+So syntax for creating a Collection is as follows: Collection values=new ArrayList();
+
+By default, a Collection can store any type of value including a string, number or any object. But if I want to restrict that the Collection should only store Integer values (or restrict to any other data type), I need to use Generics from Java.
+
+Syntax for Generic is like: Collection <Integer> values= new ArrayList<> (); (I can even use the syntax Collection <Integer> values= new ArrayList <Integer> )
+
+One difference between Collection and List is that Collection doesn't use indices but List can be referred through indices
+
+Some popular interface and object types in Java are:
+
+1) List and ArrayList
+2) Set and Hashset (hashset is like unordered_set of C++, there is no ordering of the way )
+3) Set and Treeset (Treeset is like set of C++, it maintains unique sorted order of elements, and uses red black tree internally for its implenentation)
+4) Map and HashMap
+
