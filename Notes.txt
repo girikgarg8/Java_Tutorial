@@ -324,3 +324,6 @@ Some popular interface and object types in Java are:
 3) Set and Treeset (Treeset is like set of C++, it maintains unique sorted order of elements, and uses red black tree internally for its implenentation)
 4) Map and HashMap
 
+As a list can be modified using Collections.sort(values);
+        Collections.reverse(values); etc, I can say that lists in Java are mutable
+
