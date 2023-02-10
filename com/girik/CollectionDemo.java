@@ -6,6 +6,16 @@ import java.util.List;
 import java.util.Collections;
 import java.util.*;
 
+
+class MySort implements Comparator<Integer> { //creating a class that implements the Comparator interface
+
+    @Override
+    public int compare(Integer a,Integer b){
+        if (a/10>b/10) return 1;
+        return -1;
+    }
+
+}
 public class CollectionDemo {
     public static void main(String[] args) {
         List <Integer> values= new ArrayList <>(); //Mutable
@@ -53,5 +63,8 @@ public class CollectionDemo {
         // System.out.println(it.next());
         // System.out.println(it.next());
         // System.out.println(it.next());
+
+        Collections.sort(values,new MySort());
+        System.out.println(values);
     }
 }

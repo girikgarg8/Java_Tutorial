@@ -327,3 +327,34 @@ Some popular interface and object types in Java are:
 As a list can be modified using Collections.sort(values);
         Collections.reverse(values); etc, I can say that lists in Java are mutable
 
+
+====Video 2: Collections framework====
+
+The Collection framework in Java is a set of classes and interfaces that provide a way to store and manage collections of objects. It provides a unified architecture for organizing and manipulating data in Java. The Collection framework includes classes and interfaces for different types of collections, such as lists, sets, and maps, which allow you to store and manage groups of objects. The framework provides methods for adding and removing elements, searching for elements, sorting elements, and more. Using the Collection framework in Java makes it easier to write efficient and readable code, as well as providing a more flexible and scalable way to store and manage collections of objects.
+
+Hierarchy of Java collections:
+
+See these links for details: https://drive.google.com/file/d/17Z9e9vR0Ff_vwZSu515xyKqJeHzrIkj9/view?usp=share_link and https://drive.google.com/file/d/1rJGUL46rUmY-NE59t3Gnfivjzpyl2ZIW/view?usp=share_link
+
+List interface in Java: 1) List is an ordered collection it maintains the insertion order, which means upon displaying the list content it will display the elements in the same order in which they got inserted into the list.
+
+2) We can insert an element at any position in a list
+
+An ArrayList is a dynamic array (re-sizeable array), it grows its size to accomodate new elements and shrinks when elements are removed
+
+
+By default, capacity of ArrayList is 10, can be seen from ArrayList.class using decompiler
+
+ArrayList internally uses an array to store the elements. Just like arrays, it allows to retrieve the elements by their index.
+
+ArrayList allows duplicate and null values.
+
+ArrayList is an ordered collection. It maintains the insertion order of elements.
+
+We can't create an ArrayList of primtive types like int,char etc. We need to use boxed types like Integer, Character,Boolean etc
+
+Java ArrayList is not synchronized, if multiple threads try to modify an ArrayList at same time, then final outcome will be non-determinstic. We must explicitly synchronize access to an ArrayList if multiple threads are gonna modify it
+
+
+
+
