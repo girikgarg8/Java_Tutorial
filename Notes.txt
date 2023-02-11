@@ -356,5 +356,41 @@ We can't create an ArrayList of primtive types like int,char etc. We need to use
 Java ArrayList is not synchronized, if multiple threads try to modify an ArrayList at same time, then final outcome will be non-determinstic. We must explicitly synchronize access to an ArrayList if multiple threads are gonna modify it
 
 
+===Java LinkedList class===
+
+Java LinkedList class can contain duplicate elements
+LinkedList class maintains insertion order
+
+The LinkedList class implements Queue and Deque interfaces. Therefore LinkedList can be used as a Queue, Stack or Deque.
+
+LinkedList is not thread-safe. We must explicitly synchronize concurrent modifications to LinkedList in multi-threaded enviornment
+
+
+===HashSet class overview===
+
+1. Hashset cannot contain duplicate values
+2. Hashset can contain null values
+3. Hashset is an unordered collection. It doesn't maintain the order in which elements are inserted.
+4. Hashset internally uses a HashMap for implementation. 
+
+HashSet is not thread-safe. We must explicitly synchronize concurrent modifications to HashSet in multi-threaded enviornment
+
+===Hashmap Class in Java===
+
+1) Java Hashmap is a hash table based implemntation of Java's map Interface
+
+2 Hahsmap can't have duplicate keys
+
+3) Java HashMap allows null values and null key.
+
+4) HashMap is an unordered collection. It doesn't guarantee amy specific order of elements
+
+5) HashMap is not thread-safe. We must explicitly synchronize concurrent modifications to HashMap in multi-threaded enviornment
+
+The entrySet() method in Java's HashMap class returns a Set view of the mappings contained in this map. The set is backed by the map, so changes to the map are reflected in the set, and vice-versa.
+
+Each element in the returned set is an instance of the Map.Entry interface, which provides access to both the key and value of a mapping in the map. You can use the getKey() and getValue() methods to retrieve the key and value of each entry in the set, respectively.
+
+
 
 
