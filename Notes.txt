@@ -505,5 +505,12 @@ The main difference between cookies and sessions is where the information is sto
 In summary, cookies and sessions are both ways to store information on the client side in a web application, but they have different characteristics and are used for different purposes. Cookies are stored on the client's computer and are used to store simple information, such as preferences or shopping cart items. Sessions are stored on the server and are used to store more complex information, such as the items in a shopping cart, but consume server resources and are not accessible to the client.
 
 
+But, the difference lies in the fact that information shared by ServletConfig is for a specific servlet, while information shared by ServletContext is available for all servlets in the web application.
+
+Another way to specify the routes for the application (without using web.xml file ) is to use Servlet annotation in the servlet, specifying the URL, something like @WebServlet("/about")
+
+
+===Intro to JSP (Java Server Pages) ====
+
 
 
