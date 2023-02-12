@@ -106,3 +106,143 @@ Binding(ALT+SHIFT+R,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2023-02-11 15:00:14.075 -----------------------------------------------
+eclipse.buildId=4.25.0.I20220831-1800
+java.version=19.0.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.jface 2 0 2023-02-11 15:00:44.095
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-02-11 15:00:44.095
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-02-11 15:00:44.095
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.edit.text.java.rename.element"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.ui.edit.rename"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui.ide 4 0 2023-02-11 15:02:12.568
+!MESSAGE Could not import project located at E:\Java_for_intern
+!STACK 0
+org.eclipse.ui.internal.wizards.datatransfer.CouldNotImportProjectException: Could not import project located at E:\Java_for_intern
+	at org.eclipse.ui.internal.wizards.datatransfer.SmartImportJob.toExistingOrNewProject(SmartImportJob.java:565)
+	at org.eclipse.ui.internal.wizards.datatransfer.SmartImportJob.run(SmartImportJob.java:252)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.core.internal.resources.ResourceException: Invalid project description.
+	at org.eclipse.core.internal.resources.Project.checkDescription(Project.java:178)
+	at org.eclipse.core.internal.resources.Project.assertCreateRequirements(Project.java:62)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:272)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:258)
+	at org.eclipse.ui.internal.wizards.datatransfer.SmartImportJob.createOrImportProject(SmartImportJob.java:604)
+	at org.eclipse.ui.internal.wizards.datatransfer.SmartImportJob.toExistingOrNewProject(SmartImportJob.java:552)
+	... 2 more
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2023-02-11 16:00:35.190
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Core Exception [code 275] A resource exists with a different case: '/JDBC_Tutorial'.
+	at org.eclipse.jdt.internal.core.BatchOperation.executeOperation(BatchOperation.java:52)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2380)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2405)
+	at org.eclipse.jdt.core.JavaCore.run(JavaCore.java:5929)
+	at org.eclipse.jdt.internal.ui.actions.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:108)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+Caused by: java.lang.Exception: A resource exists with a different case: '/JDBC_Tutorial'.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.resources.Resource.checkDoesNotExist(Resource.java:318)
+	at org.eclipse.core.internal.resources.Resource.checkDoesNotExist(Resource.java:296)
+	at org.eclipse.core.internal.resources.Project.assertCreateRequirements(Project.java:61)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:272)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:258)
+	at org.eclipse.jdt.internal.ui.wizards.buildpaths.BuildPathsBlock.createProject(BuildPathsBlock.java:720)
+	at org.eclipse.jdt.ui.wizards.JavaCapabilityConfigurationPage.createProject(JavaCapabilityConfigurationPage.java:247)
+	at org.eclipse.jdt.ui.wizards.NewJavaProjectWizardPageTwo.updateProject(NewJavaProjectWizardPageTwo.java:235)
+	at org.eclipse.jdt.ui.wizards.NewJavaProjectWizardPageTwo.performFinish(NewJavaProjectWizardPageTwo.java:460)
+	at org.eclipse.jdt.internal.ui.wizards.JavaProjectWizard.finishPage(JavaProjectWizard.java:79)
+	at org.eclipse.jdt.internal.ui.wizards.NewElementWizard.lambda$1(NewElementWizard.java:118)
+	at org.eclipse.jdt.internal.core.BatchOperation.executeOperation(BatchOperation.java:41)
+	... 6 more
+Caused by: org.eclipse.core.internal.resources.ResourceException(/JDBC_Tutorial)[275]: java.lang.Exception: A resource exists with a different case: '/JDBC_Tutorial'.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.resources.Resource.checkDoesNotExist(Resource.java:318)
+	at org.eclipse.core.internal.resources.Resource.checkDoesNotExist(Resource.java:296)
+	at org.eclipse.core.internal.resources.Project.assertCreateRequirements(Project.java:61)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:272)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:258)
+	at org.eclipse.jdt.internal.ui.wizards.buildpaths.BuildPathsBlock.createProject(BuildPathsBlock.java:720)
+	at org.eclipse.jdt.ui.wizards.JavaCapabilityConfigurationPage.createProject(JavaCapabilityConfigurationPage.java:247)
+	at org.eclipse.jdt.ui.wizards.NewJavaProjectWizardPageTwo.updateProject(NewJavaProjectWizardPageTwo.java:235)
+	at org.eclipse.jdt.ui.wizards.NewJavaProjectWizardPageTwo.performFinish(NewJavaProjectWizardPageTwo.java:460)
+	at org.eclipse.jdt.internal.ui.wizards.JavaProjectWizard.finishPage(JavaProjectWizard.java:79)
+	at org.eclipse.jdt.internal.ui.wizards.NewElementWizard.lambda$1(NewElementWizard.java:118)
+	at org.eclipse.jdt.internal.core.BatchOperation.executeOperation(BatchOperation.java:41)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2380)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2405)
+	at org.eclipse.jdt.core.JavaCore.run(JavaCore.java:5929)
+	at org.eclipse.jdt.internal.ui.actions.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:108)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+!SUBENTRY 1 org.eclipse.core.resources 4 275 2023-02-11 16:00:35.192
+!MESSAGE A resource exists with a different case: '/JDBC_Tutorial'.
+!STACK 0
+java.lang.Exception: A resource exists with a different case: '/JDBC_Tutorial'.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.resources.Resource.checkDoesNotExist(Resource.java:318)
+	at org.eclipse.core.internal.resources.Resource.checkDoesNotExist(Resource.java:296)
+	at org.eclipse.core.internal.resources.Project.assertCreateRequirements(Project.java:61)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:272)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:258)
+	at org.eclipse.jdt.internal.ui.wizards.buildpaths.BuildPathsBlock.createProject(BuildPathsBlock.java:720)
+	at org.eclipse.jdt.ui.wizards.JavaCapabilityConfigurationPage.createProject(JavaCapabilityConfigurationPage.java:247)
+	at org.eclipse.jdt.ui.wizards.NewJavaProjectWizardPageTwo.updateProject(NewJavaProjectWizardPageTwo.java:235)
+	at org.eclipse.jdt.ui.wizards.NewJavaProjectWizardPageTwo.performFinish(NewJavaProjectWizardPageTwo.java:460)
+	at org.eclipse.jdt.internal.ui.wizards.JavaProjectWizard.finishPage(JavaProjectWizard.java:79)
+	at org.eclipse.jdt.internal.ui.wizards.NewElementWizard.lambda$1(NewElementWizard.java:118)
+	at org.eclipse.jdt.internal.core.BatchOperation.executeOperation(BatchOperation.java:41)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2380)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2405)
+	at org.eclipse.jdt.core.JavaCore.run(JavaCore.java:5929)
+	at org.eclipse.jdt.internal.ui.actions.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:108)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.core.resources 2 2 2023-02-11 16:00:52.659
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2023-02-11 16:00:52.660
+!MESSAGE The project description file (.project) for 'Java_for_Intern_Eclipse' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.

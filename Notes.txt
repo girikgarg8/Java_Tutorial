@@ -392,5 +392,118 @@ The entrySet() method in Java's HashMap class returns a Set view of the mappings
 Each element in the returned set is an instance of the Map.Entry interface, which provides access to both the key and value of a mapping in the map. You can use the getKey() and getValue() methods to retrieve the key and value of each entry in the set, respectively.
 
 
+===JDBC===
+
+JDBC stands for Java Database connectivity
+
+JDBC is a Java API to connect and perform operations (insert,delete,update,select etc.) with the database
+
+JDBC API uses JDBC drivers to connect with the database
+
+Diagrammatic representation of how JDBC works: https://drive.google.com/file/d/1kqJW1KTVnhfpWQqzunIBu1dGnwJb8u0W/view?usp=share_link
+
+In case of Java, the driver that we use is MySQL connector.jar file
+
+To connect Java application with MySQL database, we follow the following steps:
+
+1) Load driver class
+
+2) Create connection using DriverManager
+
+3) Use connection to fire queries (Statement for static queries (static queries like SELECT * FROM TABLE) and PreparedStatement for dynamic queries (dynmaic quaries means parametrised queries like SELECT * FROM TABLE WHERE NAME=?))
+
+4) Process the result
+
+5) Close the connection
+
+The Class.forName method is commonly used in Java to dynamically load a class at runtime. This allows you to load a class that you do not know the name of until runtime, which is useful in situations where the class to be loaded is determined dynamically, such as in plugin systems or reflection-based APIs.
+
+Here is an example that demonstrates the use of Class.forName:
+
+Yes, that's correct! The syntax Class.forName("com.mysql.jdbc.Driver") is used to dynamically load the class com.mysql.jdbc.Driver from the com.mysql.jdbc package.
+
+
+DAO stands for Data Access Object. It is a design pattern that provides an abstracted interface to some type of database or other persistence mechanism, allowing the application code to interact with the data stored in the database without having to deal with the underlying details of how the data is stored and retrieved.
+
+In Java, a DAO is typically implemented as a separate class that contains methods for performing CRUD (Create, Read, Update, Delete) operations on a database. For example, a DAO class for a user database might have methods to create a new user, retrieve a user by their ID, update a user's information, and delete a user from the database.
+
+The main benefit of using a DAO pattern is that it separates the database access code from the rest of the application, making it easier to maintain and change the code. For example, if you decide to switch from one database technology to another, you can do so without having to change the application code that interacts with the database, as long as the DAO interface remains the same.
+
+Here's an example of a simple DAO class for a User database:
+
+
+public interface UserDao {
+    User findById(int id);
+    List<User> findAll();
+    void create(User user);
+    void update(User user);
+    void delete(int id);
+}
+
+executeQuery and executeUpdate are two different methods in Java that are used to execute SQL statements in a database.
+
+executeQuery is used to execute SELECT statements and it returns a ResultSet object that contains the result of the query. The ResultSet object can be used to iterate through the rows of the result and retrieve the data.
+
+executeUpdate, on the other hand, is used to execute non-SELECT statements, such as INSERT, UPDATE, DELETE, and others. It returns an integer that represents the number of affected rows in the database.
+
+In general, you should use executeQuery for SELECT statements and executeUpdate for non-SELECT statements. This ensures that you are using the correct method for each type of operation and that you are receiving the expected result.
+
+
+===Servlets===
+
+See the attached image: https://drive.google.com/file/d/1f7t7UJijqOL3XsjRqoVncEjDCWSguYDT/view?usp=share_link
+
+Whenever there is a request for a dynamic page like abc.html by the client, which the server doesn't have, the server takes the help of web container (like TomCat), the webcontainer uses web.xml file (this file web.xml is called a deployment descriptor) to determine which servlet to call, (servlet is nothing but a Java class at the end of the day), and then the servlet returns the response to the client
+
+fully qualified name means complete path of class like com.girik.addServlet
+
+doPOST() and doGet() methods are used to restrict the type of request that the servlet is handling
+
+PrintWriter out=res.getWriter();
+		out.println("Hello"); This is the method we use to write to response in JAVA
+
+        There are two ways to call a servlet inside another servlet: one is request dispatcher and another one is redirect
+
+Like in the current tutorial, I am calling squareServlet inside addServlet, but client doesn't even know that the squareServlet was called, even in the URL /add will be visible
+
+When we want to pass data from one servlet to another servlet or share data between servlets, we use the concept of session management in Java.
+
+lifecycle of a servlet in Java:
+
+1) init() method is called
+
+2) service() method is called, which contains the core logic to handle the request
+
+3) destroy() method is called
+
+
+The request and response objects are provided by the Tomcat, we don't need to explicitly program the objects.
+
+HTTPServletRequest and HTTPServletResponse are classes in Java.
+
+requestDispatcher and sendRequest: Refer to this link for image: https://drive.google.com/file/d/1D03N8F-phUDXcVXrklTiLiSOWZgw52Vu/view?usp=share_link
+
+In requestDispatcher, I don't know whether the request object was sent by servlet 1 or servlet 2, however let's take the example of Amazon.com, if I click checkout, it redirects me to PayPal servlet, so I want to let the user know thatthey are being served by Paypal servlet.
+
+So, for this purpose, I use sendRequest() servlet, in case of sendRequest, client sends a request object to servlet 1, then the servlet 1 lets the client know that it is being redirected, then the client sends new request object (req2) to the servlet 2 (card details, in case of Paypal), and then response is received from the servlet 2
+
+
+One way of using sendRequest is through URL rewriting, where we specify the parameters of servlet 2 while calling the first servlet, something like "sq?k="+2, will pass parameter 2 to the  squareServlet servlet
+
+There can be two other ways to use sendRequest(): through HTTP session and cookies.
+
+Firstly, what is the difference between HTTP seesion and cookies?
+
+Session and cookie are both ways to store information on the client side in a web application. However, they have some important differences.
+
+A cookie is a small piece of data that is stored on the client's computer by the web browser. Cookies are used to store information about the client, such as preferences or shopping cart items, so that this information can be accessed later. Cookies are usually stored as key-value pairs and can be accessed by the server on subsequent requests from the client.
+
+A session, on the other hand, is a way to store information on the server side that is associated with a particular client. When a client makes a request to a web application, the server creates a new session if one does not already exist, and it associates a unique session ID with the client. The server can then store information about the client in the session, such as the items in a shopping cart, and access this information on subsequent requests from the client.
+
+The main difference between cookies and sessions is where the information is stored. Cookies are stored on the client's computer, while sessions are stored on the server. This means that sessions are more secure, as the information is stored on the server and is not accessible to the client. However, sessions also have some disadvantages. For example, if the client has multiple tabs or windows open, each tab or window will have its own session, which can cause confusion. Also, sessions consume server resources, as the server needs to store the session information.
+
+In summary, cookies and sessions are both ways to store information on the client side in a web application, but they have different characteristics and are used for different purposes. Cookies are stored on the client's computer and are used to store simple information, such as preferences or shopping cart items. Sessions are stored on the server and are used to store more complex information, such as the items in a shopping cart, but consume server resources and are not accessible to the client.
+
+
 
 
