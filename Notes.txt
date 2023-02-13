@@ -546,6 +546,15 @@ How JSP is converted into servlet?
 2) there are four types of scripting elements in JSP: see the attached image for visual explanation: https://drive.google.com/file/d/1yXS5UigFJxVh8RcfyS-dSW9a6OWVqn88/view?usp=share_link
 
 
+2.1 First type of scripting element is scriptlet, which is defined by <% %>, sign,whatever we specify inside the scriptlet goes inside the service function of servlet
+
+2.2 Second type of scripting element is declaration, the use case of this scripting element is when we want to declare a variable or a function outside the service function of servlet, I can do that with the help of the declaration, syntax of declaration is <%!  %>
+
+2.3 Third type of scripting element is declarative, the use case of this scripting element is, if I want to import any classes into the servlet, I can specify them by using the directive tag, something like <@ page import="java.util.Date" %>
+
+2.4 Fourth one is expression, suppose I want to print anything to the UI,  instead of using out.println("Hello"), I can use JSP expression, the syntax is <%= "some text" %>
+
+
 Implicit objects in JSP: 
 
 
