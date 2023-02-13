@@ -512,5 +512,40 @@ Another way to specify the routes for the application (without using web.xml fil
 
 ===Intro to JSP (Java Server Pages) ====
 
+Firstly, why do I need Java pages when I have servlets? Let's say I want to use HTML inside servlets, the way to do is to specify the HTML tags inside the out.println statement,something like out.println ("<h1> Hello, I am Girik </h1> ") (in Servlets, I use HTML inside a ), but then writing HTML inside Java is a bit cumbserome process, so Java Server Pages allows us to write Java inside pages, something like add.jsp file, 
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body bgcolor="cyan">
+	<% 
+			int i=Integer.parseInt(request.getParameter("num1"));
+			int j=Integer.parseInt(request.getParameter("num2"));
+			int k=i+j;
+			
+			out.println("Output: "+k);
+		%>
+</body>
+</html>
+
+There's something known as implicit objects in JSP, for example in this code, I didn't explicitly declare request or out, they are implicit objects in JSP.
+
+Question arises: Why do I need Servlets when JSP is much easier to program?
+
+Reason is that I can program in Servlet, but Apache Tomcat is a servlet container, so that means Tomcat can serve servlets only
+
+How JSP is converted into servlet?
+
+1) if the JSP file is saved as demo.jsp file, then a servlet is created with the name of the class as DemoJSP
+
+2) there are four types of scripting elements in JSP: see the attached image for visual explanation: https://drive.google.com/file/d/1yXS5UigFJxVh8RcfyS-dSW9a6OWVqn88/view?usp=share_link
+
+
+Implicit objects in JSP: 
 
 
