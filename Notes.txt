@@ -581,4 +581,46 @@ Here is an example of a taglib directive:
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+Implicit objects in JSP:
+
+1. request (HTTPServletRequest)
+2. response (HTTPServletResponse)
+3. pageContext (PageContext)
+4. out (JSPWriter) ~ PrintWriter object
+5. session (HttpSession)
+6. application (ServletContext)
+7. config (ServletConfig)
+
+The pageContext object can be used to set,get or remove attribute from one of the following scopes:
+page
+request
+session
+application
+
+
+In JavaServer Pages (JSP) technology, the term "scope" refers to the visibility and lifetime of an attribute within the context of a web application. There are four different scopes available in JSP:
+
+page scope: An attribute with page scope is only visible to the JSP page in which it was declared. It is only accessible while the JSP page is being processed, and it is automatically destroyed when the JSP page is finished processing.
+
+request scope: An attribute with request scope is visible to all JSP pages and servlets that are called in response to the same client request. Once the response has been sent back to the client, the attribute is automatically destroyed.
+
+session scope: An attribute with session scope is associated with a user session, and it is visible to all JSP pages and servlets that are accessed by the same user during the lifetime of the session. The attribute is automatically destroyed when the user's session ends.
+
+application scope: An attribute with application scope is visible to all JSP pages and servlets in the same web application. It is stored in the ServletContext object and is accessible throughout the lifetime of the web application.
+
+
+Here are some use cases for request scope:
+
+Storing form data that was submitted by the user. For example, you can use request scope to store data that was entered in an HTML form, and then use that data to generate a dynamic response.
+Sharing data between multiple JSP pages that are part of the same request. For example, you can use request scope to store data that is used by multiple JSP pages, such as the results of a database query.
+
+
+Here are some use cases for application scope:
+
+Storing data that is shared by multiple users and multiple requests. For example, you can use application scope to store data that is used by multiple JSP pages, such as a configuration settings or the results of a database query that doesn't change frequently.
+Storing data that is global to the web application. For example, you can use application scope to store data such as the number of users that are currently accessing the web application.
+
+
+
+In order to use the excption object, the isErrorpage attribute of page directive must be true
 
