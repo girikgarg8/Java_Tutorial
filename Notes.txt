@@ -624,3 +624,41 @@ Storing data that is global to the web application. For example, you can use app
 
 In order to use the excption object, the isErrorpage attribute of page directive must be true
 
+Class.forName("com.mysql.jdbc.Driver");
+
+The Class.forName method in Java is used to dynamically load a class at runtime, whereas importing a class in a Java file is a way to bring the class into the scope of the file so that it can be used without specifying the fully-qualified class name.
+
+There are several reasons why you might use Class.forName instead of an import statement:
+
+Late Binding: With Class.forName, you can bind to a class at runtime, which means you can determine the class to be used at runtime based on user input or other dynamic conditions.
+
+Loading Classes from Different Class Loaders: When you use Class.forName, you can specify a class loader, which allows you to load classes from different sources, such as different JAR files.
+
+Hidden Dependencies: When you use Class.forName, you don't need to explicitly import the class or its dependencies in the source code, which can be useful in cases where you want to hide the dependencies from the client code.
+
+In general, if you know the class you want to use at compile time, it's usually easier to simply import it. But if you need to dynamically load classes at runtime, or if you have other specific requirements, Class.forName can be a useful tool.
+
+
+
+MVC architecture in Java explained:
+
+Let's take the example of a page which shows the marks of a Student
+
+1. The view has the layout of the page to be displayed, it doesn't have the actual marks of any student, the view in Java is provided by JSP (so we should avoid writng any business logic inside JSP), the view can be static (which can be implemneted with the help of HTML) or dynamic view (like that provided by JSP), dynamic view here means that the data to be displayed is not hardcoded
+
+2. The model has the actual data of the students's marks 
+
+3. The contoller in Java is provided by Servlets, explained below.
+
+How the flow happens?
+
+1. Client makes a request for /getMarks
+2. The controller first takes charge, and fetches the data from the model.
+3. The controller passes the data (from the model) to the view
+4. The view renders the page, and this view is passed to the client
+
+In JSP, I can use expression language, which helps me to eliminate java code To overcome the above problem, we have to use Expression Language syntax along with standard actions, custom actions, and JSTL tag library.
+
+Syntax: ${expression}, expression is the value present which is evaluated at runtime and being sent to the output stream.
+
+
