@@ -661,4 +661,5 @@ In JSP, I can use expression language, which helps me to eliminate java code To 
 
 Syntax: ${expression}, expression is the value present which is evaluated at runtime and being sent to the output stream.
 
+h
 
