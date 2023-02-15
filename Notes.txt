@@ -661,5 +661,18 @@ In JSP, I can use expression language, which helps me to eliminate java code To 
 
 Syntax: ${expression}, expression is the value present which is evaluated at runtime and being sent to the output stream.
 
-h
+<!-- c:import url="https://en.wikipedia.org/wiki/Java_(programming_language)"> </c:import> --> will load the wikipedia page using JSTL tag.
+
+	<c:forEach items="${students}" var="s">
+	${s.name} <br/>
+	</c:forEach> (Pasting here because not able to comment in JSP, so this infomrtauon will be permanently lost otherwise)
+
+Here is an example of how to use the <c:forEach> tag to loop over an array of strings and output each string:
+
+kotlin
+Copy code
+<c:forEach var="item" items="${myArray}">
+  <c:out value="${item}"/><br>
+</c:forEach>
+In this example, myArray is the name of the array that we want to loop over. The <c:forEach> tag creates a loop that iterates over each element in the array. The var attribute specifies the name of the loop variable (in this case, item), and the items attribute specifies the array that we want to loop over.
 
