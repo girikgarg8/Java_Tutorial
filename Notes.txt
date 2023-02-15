@@ -665,7 +665,7 @@ Syntax: ${expression}, expression is the value present which is evaluated at run
 
 	<c:forEach items="${students}" var="s">
 	${s.name} <br/>
-	</c:forEach> (Pasting here because not able to comment in JSP, so this infomrtauon will be permanently lost otherwise)
+	</c:forEach> (Pasting here because not able to comment in JSP, so this information will be permanently lost otherwise)
 
 Here is an example of how to use the <c:forEach> tag to loop over an array of strings and output each string:
 
@@ -676,3 +676,29 @@ Copy code
 </c:forEach>
 In this example, myArray is the name of the array that we want to loop over. The <c:forEach> tag creates a loop that iterates over each element in the array. The var attribute specifies the name of the loop variable (in this case, item), and the items attribute specifies the array that we want to loop over.
 
+
+My doubt was: 
+
+How does Expression language resolve the scope of the variable which I am using? Like if I use the syntax {name}, how does Expression language come to know whether name is to be used from same JSP file or from the request object
+
+Answered by ChatGPT:
+
+In Expression Language (EL), the scope of the variable is determined by a set of predefined rules. If a variable is used without any scope resolution, it is first checked in the page scope, then in the request, session, and finally in the application scope.
+
+For example, if you use the expression ${name} in your JSP file, EL will look for a variable named "name" in the page scope, then in the request, session, and finally in the application scope. If the variable is found in any of the scopes, the value of the variable is used. If the variable is not found, EL returns a null value.
+
+If you want to explicitly specify the scope of the variable, you can use the following syntax:
+
+${pageScope.name} - looks for the variable in the page scope
+${requestScope.name} - looks for the variable in the request scope
+${sessionScope.name} - looks for the variable in the session scope
+${applicationScope.name} - looks for the variable in the application scope
+Using this syntax, you can explicitly specify which scope to search for the variable in.
+
+
+Using functions in JSTL tag libraries: 
+
+Syntax: ${fn:toUpperCase('hello world')}
+This will output HELLO WORLD.
+
+Note that the fn prefix in the example above refers to the JSTL function tag library, which provides a set of commonly used functions that you can use in Expression Language. If you want to use functions from other libraries or custom functions, you need to specify the appropriate prefix for those libraries.
