@@ -702,3 +702,17 @@ Syntax: ${fn:toUpperCase('hello world')}
 This will output HELLO WORLD.
 
 Note that the fn prefix in the example above refers to the JSTL function tag library, which provides a set of commonly used functions that you can use in Expression Language. If you want to use functions from other libraries or custom functions, you need to specify the appropriate prefix for those libraries.
+
+
+===Servlet Filter===
+
+Concept of Filters in Java:
+
+Let's say I have three servlets A,B,C
+
+Servlets A and B have a common concern of logging
+Servlets B and C have a common concern of transaction management
+
+Servlets A,B and C all have a common concern of implementing security
+
+So instead of writing their code inidividually, I can create a filter between the client and the servlet, if the request passes the filter, it will go to the servlet, else the filter can return an error response (or any other response) to the client.
