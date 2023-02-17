@@ -755,6 +755,5 @@ Now whenever the user clicks on Logout button, he should be redirected to login 
 
 All this while, I need to keep in mind that the browser caches web pages, so if I press the back button, the videos.jsp page might still be visible, so I need to clear the meta tags (these details will be discussed in detail during coding).
 
+a
 
-
-h
