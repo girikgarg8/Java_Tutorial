@@ -755,5 +755,14 @@ Now whenever the user clicks on Logout button, he should be redirected to login 
 
 All this while, I need to keep in mind that the browser caches web pages, so if I press the back button, the videos.jsp page might still be visible, so I need to clear the meta tags (these details will be discussed in detail during coding).
 
-a
+In logout.java, Ihave used session. invalidate(),the basic function of this code is that: All objects bound to the session are removed.
 
+If I click on back button, I am able to see the welcome.jsp page, even though I am not logged in, the reason is that the browser is caching the pages, caching is beneficial in one sense that it helps to load the pages faster, but over here it is not beneficial.
+
+
+So, for handling this issue, I will use the "Cache Control" HTTP header, cache-control HTTP header field holds directives (instructions)- in both requests and reponses- that control caching in browsers and shared caches.
+
+
+Here, I am using the policy as "no cache, no store, must revalidate"  in welcome.jsp and videos.jsp pages
+
+Maven project
